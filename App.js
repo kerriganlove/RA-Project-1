@@ -1,24 +1,16 @@
 //App.js
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, TextInput,TouchableOpacity } from 'react-native';
+import Survey from './Survey';
+import StartWindow from './StartWindow';
 
 
-export default class App extends React.Component {
-
+export default class App extends Component
+{
   render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.settingView}>
-          <TouchableOpacity>
-            <Image source={require('./icon/setting.png')}/>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.ddayView}>
-
-        </View>
-        <View style={styles.chatView}>
-
-        </View>
+    return(
+      <View style ={{flex : 1}}>
+        <StartWindow />
       </View>
     );
   }
