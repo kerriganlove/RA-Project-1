@@ -5,14 +5,14 @@ export default class Survey extends Component
 {
     render(){
         return(
-            <View>
+            <View style = { styles.container }>
                 <Text>Hello Survey!</Text>
             </View>
         );
     }
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     container : {
         flex : 1,
         justifyContent : "center",

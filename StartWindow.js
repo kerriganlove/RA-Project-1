@@ -1,56 +1,37 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, TextInput,TouchableOpacity } from 'react-native';
-import Survey from './Survey';
-//import { NavigationContainer } from '@react-navigation/native'
 
 export default class StartWindow extends Component
 {
     render(){
         return(
             <View style = {styles.containers}>
-                <Title />
-                <ButtonGroup />
+                <View style={styles.Title}>
+                  <Text style = {{fontSize : 30}}>OPIC 모의 구현</Text>
+                  <Text style = {{fontSize : 20}}>I will be taken my grade IH by Ava!</Text>
+                  <Text style = {{fontSize : 20}}>Show me what you got!!</Text>
+                </View>
+                <View style={styles.ButtonGroup}>
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress = {()=> this.props.navigation.navigate('SurveyWindow')}>
+                    <Text style={{ color : '#ffffff' }}>Start from Survey</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress = {()=> this.setState({val : 2})}>
+                    <Text style={{ color : '#ffffff' }}>Start from OPICtest</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress = {()=> this.setState({val : 3})}>
+                    <Text style={{ color : '#ffffff' }}>Show about Question List</Text>
+                  </TouchableOpacity>
+                </View>
             </View>
         )
     }
 }
-
-class Title extends Component
-{
-  render() {
-    return(
-      <View style={styles.Title}>
-        <Text style = {{fontSize : 30}}>OPIC 모의 구현</Text>
-        <Text style = {{fontSize : 20}}>I will be taken my grade IH by Ava!</Text>
-        <Text style = {{fontSize : 20}}>Show me what you got!!</Text>
-      </View>
-    );
-  }
-}
-class ButtonGroup extends Component
-{
-  render() {
-    return(
-        <View style={styles.ButtonGroup}>
-          <TouchableOpacity
-            style={styles.button}> // onPress = {()=> this.props.navigation.navigate(<Survey />)} //
-            <Text style={{ color : '#ffffff' }}>Start from Survey</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button}
-            onPress = {()=> this.setState({val : 2})}>
-            <Text style={{ color : '#ffffff' }}>Start from OPICtest</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button}
-            onPress = {()=> this.setState({val : 3})}>
-            <Text style={{ color : '#ffffff' }}>Show about Question List</Text>
-          </TouchableOpacity>
-        </View>
-    );
-  }
-}
-
 
 const styles = StyleSheet.create({
   containers : {
@@ -84,4 +65,3 @@ const styles = StyleSheet.create({
   }
 })
 
-const stack = createStackNavigator();
